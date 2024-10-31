@@ -65,15 +65,29 @@ class RegistrationFormType extends AbstractType
             ->add('is_breeder', CheckboxType::class, [
                 'label'    => 'Êtes-vous un éleveur ?',
                 'required' => false,
-                'attr' => ['class' => 'form-check-input'] 
+                'attr' => [
+                    'class' => 'form-check-input',
+                    'data-toggle' => 'breeder-toggle'
+                ] 
             ])
             ->add('siret', TextType::class, [
                 'label'=> false,
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Siret'],
+                'required' => false,
+                'attr' => [
+                    'class' => 'form-control', 
+                    'placeholder' => 'Siret',
+                    'data-breeder' => 'true',
+                    'style' => 'display: none;'
+                ],
             ])
             ->add('phone_number', TextType::class, [
                 'label'=> false,
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Numéro de téléphone']
+                'attr' => [
+                    'class' => 'form-control', 
+                    'placeholder' => 'Numéro de téléphone',
+                    'data-breeder' => 'true',
+                    'style' => 'display: none;'
+                ]
             ])
         ;
     }
