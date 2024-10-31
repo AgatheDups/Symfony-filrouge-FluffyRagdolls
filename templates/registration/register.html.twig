@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FluffyRagdolls - Inscription{% endblock %}
+
+{% block body %}
+    <body>
+        <main>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card bg-light mb-4 custom-shadow">
+                        <div class="card-body">
+                            {{ form_start(registrationForm) }}
+                                <div class="box">
+                                    {{ form_row (registrationForm.email) }}
+                                </div>
+                                <div class="box">
+                                    {{ form_row (registrationForm.username) }}
+                                </div>
+                                <div class="box">
+                                    {{ form_row (registrationForm.plainPassword) }}
+                                </div>
+                                <div class="box">
+                                    {{ form_row (registrationForm.city) }}
+                                </div>
+                                {{ form_row (registrationForm.is_breeder) }}
+                                <div class="box">
+                                    {{ form_row (registrationForm.siret) }}
+                                </div>
+                                <div class="box">
+                                    {{ form_row (registrationForm.phone_number) }}
+                                </div>
+                                {{ form_row (registrationForm.agreeTerms) }}
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-danger">Créer le compte</button>
+                                </div>
+                            {{ form_end(registrationForm) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ form_errors(registrationForm) }}
+        </main>
+    </body>
+{% endblock %}
