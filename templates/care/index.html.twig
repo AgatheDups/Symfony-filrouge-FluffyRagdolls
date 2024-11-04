@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FluffyRagdolls - Entretien{% endblock %}
+
+{% block body %}
+<body>
+    <main>
+        <div class="entretien">
+            <div class=" d-flex col intro">
+                <img class="image-chat col-lg-4" style="height: 50%;" id="image1" src="../../assets/img/photo-entretien.jpg" alt="Chat ragdoll" srcset=""/>
+                <div class="intro-text">
+                    <h2>Entretien</h2>
+                    <p>
+                        Avec un pelage mi-long et un sous-poil modérément dense, le Ragdoll n'exige pas un entretien fastidieux. Un brossage régulier permet de maintenir la beauté et la propreté de son pelage, ainsi que la bonne santé de sa peau. Comme le Ragdoll ne sort pas souvent, il a moins d'occasions de se salir.
+                        <br><br>
+                        Il est recommandé de brosser le Ragdoll une à deux fois par semaine pour l'aider à se débarrasser de ses poils morts, ce qui évite qu'ils s'accumulent dans son intestin et forment des trichobézoards. Lors du brossage, il est important de porter une attention particulière à la zone du "pantalon" située sur l'arrière-train du chat, où le poil est généralement plus dense et fourni. De temps en temps, le Ragdoll peut également avoir besoin d'un bain. Les soins dentaires sont indispensables pour prévenir les maladies parodontales causées par le tartre, et il est également nécessaire de couper régulièrement ses griffes, car il les use très lentement.</p>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card bg-light mb-4 custom-shadow">
+                    <img src="../../assets/img/img-brosse.jpg" class="card-img-top" alt="image de brosse pour chats">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger text-center">Brosse</h5>
+                        <p class="card-text">Voici une brosse pour chat de la marque NekoCare.</p>
+                        <a href="#" class="btn btn-danger">Lire plus ...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-light mb-4 custom-shadow">
+                    <img src="../../assets/img/img-coupe-griffes.jpg" class="card-img-top" alt="image de coupe griffes">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger text-center">Coupe griffe</h5>
+                        <p class="card-text">Voici un coupe griffes de la marque PattesVelours.</p>
+                        <a href="#" class="btn btn-danger">Lire plus ...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-light mb-4 custom-shadow">
+                    <img src="../../assets/img/img-dentifrice.jpg" class="card-img-top" alt="image de dentifrice pour chat">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger text-center">Dentifrice</h5>
+                        <p class="card-text">Voici un dentifrice de la marque RonronNature.</p>
+                        <a href="#" class="btn btn-danger">Lire plus ...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© Agathe Dupuis 2024</p>
+    </footer>
+    
+
+    {% block javascripts %}
+        {% block importmap %}{{ importmap('app') }}{% endblock %}
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    {% endblock %}
+</body>
+{% endblock %}
