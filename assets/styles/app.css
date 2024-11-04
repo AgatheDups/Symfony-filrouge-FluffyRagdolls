@@ -129,8 +129,13 @@ footer p{
     padding: 10px 0 0 10px;
 }
 
+.footer-sticky{
+    position: fixed;
+    bottom: 0;
+}
 
-                /* corps du site - home*/
+
+/* corps du site - home*/
 
                 
 #image1{
@@ -221,6 +226,73 @@ span{
     color:#476376;
 }
 
+/* corps du site - entretien*/
+
+
+.card{
+    margin-top: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0,0.2);
+}
+.card h5{
+    color: #F34840 !important;
+    font-weight: 700;
+}
+
+.card a{
+    background: #F34840;
+    border-color: #F34840;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0,0.2);
+}
+
+
+/* corps du site - entretien*/
+
+
+.card{
+    margin-top: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0,0.2);
+}
+.card h5{
+    color: #F34840 !important;
+    font-weight: 700;
+}
+
+.card a{
+    background: #F34840;
+    border-color: #F34840;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0,0.2);
+}
+
+/* corps du site - calcul poids*/
+
+
+#graph h2{
+    margin: auto;
+}
+
+#graph img{
+    width: 100%;
+}
+
+.box-sexe{
+    width: 15px;
+    height: 15px;
+}
+.box-male{
+    background: steelblue;
+}
+.box-femelle{
+    background: pink;
+}
+
+.legende-femelle, .legende-male{
+    display: flex;
+    align-items: center;
+}
+.legende-graphe p{
+    margin: 0 !important;
+    padding-left: 10px;
+}
 
 /* corps du site - connexion*/
 
