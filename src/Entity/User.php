@@ -239,7 +239,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $post->setUser(null);
             }
         }
-
         return $this;
     }
 
@@ -257,7 +256,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             $this->comments->add($comment);
             $comment->setUser($this);
         }
-
         return $this;
     }
 
@@ -269,7 +267,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $comment->setUser(null);
             }
         }
-
         return $this;
     }
 
@@ -311,7 +308,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $announcement->setUser(null);
             }
         }
-
         return $this;
     }
 }
