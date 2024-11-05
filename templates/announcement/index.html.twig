@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FluffyRagdolls - Announces{% endblock %}
+
+{% block body %}
+<body>
+    <main>
+        <div class="col">
+            <div class="col-md-10">
+                {% for annonce in announces % }
+                    <div class="card bg-light mb-4 custom-shadow">
+                            <img src="../../assets/img/croquette-EC.webp" class="card-img-top" alt="croquettes Edgard & Cooper">
+                            <div class="card-body">
+                                <h5 class="card-title text-danger text-center">Edgard & Cooper</h5>
+                                <p class="card-text">Croquette pour chat de la marque Edgard & Cooper, prix de 41,99€ pour 4kg</p>
+                                <a href="" target="_blank" class="btn btn-danger"><span>Voir plus</span> ...</a>
+                            </div>
+                    </div>
+                {% endfor %} 
+            </div>
+        <br>
+    </main>
+
+    <footer>
+        <p>© Agathe Dupuis 2024</p>
+    </footer>
+</body>
+{% endblock %}
