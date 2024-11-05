@@ -46,6 +46,7 @@ class Announcement
     public function __construct()
     {
         $this->photos = new ArrayCollection();
+        $this->creation_date = new \DateTime();
     }
 
     public function getId(): ?int
@@ -58,7 +59,7 @@ class Announcement
         return $this->creation_date;
     }
 
-    public function setCreationDate(\DateTimeInterface $creation_date): static
+    public function setCreationDate(\DateTimeInterface $creation_date): self
     {
         $this->creation_date = $creation_date;
 
