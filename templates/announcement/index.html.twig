@@ -7,16 +7,17 @@
     <main>
         <div class="col">
             <div class="col-md-10">
-                {% for annonce in announces % }
-                    <div class="card bg-light mb-4 custom-shadow">
-                            <img src="../../assets/img/croquette-EC.webp" class="card-img-top" alt="croquettes Edgard & Cooper">
+                    <div class="row">
+                        <div class="card bg-light mb-4 custom-shadow">
                             <div class="card-body">
-                                <h5 class="card-title text-danger text-center">Edgard & Cooper</h5>
-                                <p class="card-text">Croquette pour chat de la marque Edgard & Cooper, prix de 41,99€ pour 4kg</p>
-                                <a href="" target="_blank" class="btn btn-danger"><span>Voir plus</span> ...</a>
+                                {% for announcement in announcements %}
+                                    <h5>{{ announcement.cat_name }}</h5>
+                                    <p class="card-text">{{ announcement.description }}</p>
+                                    <p class="card-text">{{ announcement.cat_birth }}</p>
+                                {% endfor %}
                             </div>
+                        </div>
                     </div>
-                {% endfor %} 
             </div>
         <br>
     </main>
