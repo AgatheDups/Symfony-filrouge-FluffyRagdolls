@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Announcement;
 use App\Entity\CatGender;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -60,7 +61,7 @@ class AddAnnouncementType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            // Configure your form options here
+            'symf_filrouge_v2' => Announcement::class,
         ]);
     }
 }
