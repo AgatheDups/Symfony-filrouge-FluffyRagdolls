@@ -59,11 +59,6 @@ nav button a img{
     }
 }
 
-.navbar-toggler .burger-icon {
-    display: block;
-}
-
-
 .nav-link{
     color: white;
     margin-left: 10px;
@@ -85,6 +80,7 @@ nav li{
 
 .menu{
     margin-top: 5px;
+    min-width: 290px;
     background-color: #9CBED7;
 }
 
@@ -341,4 +337,11 @@ form .box{
 
 .form-check-input{
     margin: 5px;
+}
+
+
+/* announcement create */
+
+.form-description{
+    min-height: 120px;
 }
