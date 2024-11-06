@@ -3,39 +3,37 @@
 {% block title %}FluffyRagdolls - Announce création{% endblock %}
 
 {% block body %}
-    <body>
-        <main>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card bg-light mb-4 custom-shadow">
-                        <div class="card-body">
-                            {{ form_start(addAnnouncementForm) }}
-                                <div class="box">
-                                    {{ form_row (addAnnouncementForm.cat_name) }}
-                                </div>
-                                <div class="box">
-                                    {{ form_row (addAnnouncementForm.cat_birth) }}
-                                </div>
-                                <div class="box">
-                                    {{ form_row (addAnnouncementForm.cat_loof) }}
-                                </div>
-                                <div class="box">
-                                    {{ form_row (addAnnouncementForm.cat_gender) }}
-                                </div>
-                                {{ form_row (addAnnouncementForm.description) }}
-                                <br>
-                                {{ form_row (addAnnouncementForm.photos) }}
-                                <br>
-                                <div class="d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-danger">Créer l'annonce</button>
-                                </div>
-                            {{ form_end(addAnnouncementForm) }}
-                        </div>
+    <main>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card bg-light mb-4 custom-shadow">
+                    <div class="card-body">
+                        {{ form_start(addAnnouncementForm) }}
+                            <div class="box">
+                                {{ form_row (addAnnouncementForm.cat_name) }}
+                            </div>
+                            <div class="box">
+                                {{ form_row (addAnnouncementForm.cat_birth) }}
+                            </div>
+                            <div class="box">
+                                {{ form_row (addAnnouncementForm.cat_loof) }}
+                            </div>
+                            <div class="box">
+                                {{ form_row (addAnnouncementForm.cat_gender) }}
+                            </div>
+                            {{ form_row (addAnnouncementForm.description) }}
+                            <br>
+                            {{ form_row (addAnnouncementForm.photos) }}
+                            <br>
+                            <div class="d-flex justify-content-end">
+                                <button type="submit" class="btn btn-danger">Créer l'annonce</button>
+                            </div>
+                        {{ form_end(addAnnouncementForm) }}
                     </div>
                 </div>
             </div>
-        </main>
-    </body>
+        </div>
+    </main>
     {{ form_errors(addAnnouncementForm) }}
 {% endblock %}
 
