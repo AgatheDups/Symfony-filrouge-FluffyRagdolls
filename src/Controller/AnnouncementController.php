@@ -14,14 +14,13 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class AnnouncementController extends AbstractController
 {
-    #[Route('/announcement/{id}', name: 'app_announcement')]
-    public function announcement(AnnouncementRepository $announcementRepository, int $id): Response
+    #[Route('/announcement', name: 'app_announcement')]
+    public function announcement(AnnouncementRepository $announcementRepository): Response
     {
-        $announcements = $announcementRepository ->findByUserId($id);
+        $announcements = $announcementRepository ->findAll();
 
         return $this->render('announcement/index.html.twig', [
             'announcements' => $announcements,
-            'announcementId' => $id,
         ]);
     }
 
