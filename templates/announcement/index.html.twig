@@ -8,9 +8,9 @@
             {% if announcements is not empty %}
                 {% for announcement in announcements %}
                     <div class="col-md-12">
-                        <div class="row">
-                            <div>
-                                {# <img src="{{ announcement.photos }}"> #}
+                        <div class="col d-flex content-announcement">
+                            <div class="card-phone-announcement">
+                                {# <img class="img-announcement" src="{{ announcement.photos }}"> #}
                                 <div class="card-announcement">
                                     <table >
                                         <tbody>
@@ -24,15 +24,19 @@
                                             </tr>
                                             <tr>
                                                 <td><img class="tag-announcement" src="{{ asset('assets/img/map-solid.png') }}" alt="Ville"></td>
-                                                <td>Ville</td>
+                                                <td>{{ announcement.user.city }}</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <br>
                                 <div class="d-flex phone-announcement">
-                                    <p>*********</p> 
-                                    <button class="btn btn-danger btn-announcement">
+                                    {% if announcement.user and announcement.user.phoneNumber %}
+                                        <p id="phone-display-{{ loop.index }}">••••••••••</p>
+                                    {% else %}
+                                        <p>Numéro de téléphone non disponible.</p>
+                                    {% endif %}
+                                    <button class="btn btn-danger btn-phone" onclick="showPhoneNumber('{{ announcement.user.phoneNumber }}', {{ loop.index }})">
                                         <img class="tag-phone" src="{{ asset('assets/img/phone-solid.png') }}" alt="Bouton n°tel">
                                     </button>
                                 </div>
@@ -45,10 +49,24 @@
             {% else %}
                 <p>Aucune annonce trouvée.</p>
             {% endif %}
+            {% if app.user.isBreeder %}
+                <button class="btn btn-danger btn-announcement"><a class="" href="/announcement-create">Créer une annonce</a></button>
+            {% endif %}
         </div>
     </main>
 
     <footer>
         <p>© Agathe Dupuis 2024</p>
     </footer>
+
+    <script>
+        function showPhoneNumber(phoneNumber, index) {
+            const phoneDisplay = document.getElementById('phone-display-' + index);
+            if (phoneDisplay.textContent === "••••••••••") {
+                phoneDisplay.textContent = phoneNumber;
+            } else {
+                phoneDisplay.textContent = "••••••••••";
+            }
+        }
+    </script>
 {% endblock %}
