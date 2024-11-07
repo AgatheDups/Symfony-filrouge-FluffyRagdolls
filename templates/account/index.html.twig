@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FluffyRagdolls - Compte{% endblock %}
+
+{% block body %}
+    <main>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card bg-light mb-4 custom-shadow">
+                    <div class="card-body">
+                        {% if app.user %}
+                            <p>Bienvenue, {{ app.user.username }} !</p>
+                            <p>Email : {{ app.user.email }}</p>
+                            <p>Ville : {{ app.user.city }}</p>
+                            <br>
+                            {% if app.user.isBreeder %}
+                                <p>Vous êtes éleveur.</p>
+                                <p>Numéro de téléphone : {{ app.user.phoneNumber }}</p>
+                                <p>SIRET : {{ app.user.siret }}</p>
+                            {% else %}
+                                <p>Ce profil n'est pas un éleveur.</p>
+                            {% endif %}
+                            <a class="logout-account" href="{{ path('app_logout') }}">Me déconnecté(e)</a>
+                        {% else %}
+                            <p>Veuillez vous connecter.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
