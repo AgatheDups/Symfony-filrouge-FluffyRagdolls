@@ -335,8 +335,28 @@ form .box{
     margin: 0;
 }
 
+.form-control-photo{
+    display: flex;
+    flex-direction: column;
+}
+
 .form-check-input{
     margin: 5px;
+}
+
+/* account */
+
+.logout-account{
+    text-decoration: none;
+    color: #6B92AE;
+    background: none !important;
+    box-shadow: none !important;
+    display: block;
+    text-align: end;
+}
+
+.logout-account:hover{
+    color: #486a83;
 }
 
 
@@ -352,6 +372,8 @@ form .box{
     border-radius: 20px;
     border: 2px solid #E9DDC5;
     background: #FFF2D7;
+    max-width: 205px;
+    margin: 0 auto;
 }
 
 .card-announcement tr:not(:last-child){
@@ -362,7 +384,8 @@ form .box{
 }
 
 .card-announcement td{
-    padding: 5px;
+    padding: 5px 15px 5px 15px;
+    font-size: 20px;
 }
 
 .tag-announcement{
@@ -374,8 +397,10 @@ form .box{
     background: #E9DDC5;
     border-radius: 10px;
     justify-content: space-around;
+    width: 180px;
     height: 40px;
     padding-top: 5px;
+    margin: 0 auto;
 }
 
 .description-announcement{
@@ -387,12 +412,33 @@ form .box{
     max-width: 20px;
     max-height: 20px;
     position: relative;
-    right: 6px;
+    right: 7px;
     bottom: 5px;
 }
 
-.btn-announcement{
+.btn-phone{
     border-radius: 100%;
     max-width: 30px;
     max-height: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn-phone:active {
+    transform: translate(10px, 0px); /* Remplacez les valeurs par celles de votre choix */
+}
+
+.btn-announcement a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.btn-announcement a:hover{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+@media (max-width : 1200px){
+    .content-announcement{
+        flex-direction: column;
+    }
 }
