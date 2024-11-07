@@ -49,10 +49,11 @@ class AddAnnouncementType extends AbstractType
             'data_class' => null,
             'multiple' => true,
             'mapped' => false,
-            'label'=> 'Photos du chat',
+            'label'=> 'Photos du chat:',
             'required' => false,
             'attr' => [
-                'accept' => 'image/*',
+                'accept' => 'image/png, image/jpeg',
+                'class' => 'form-control-photo'
             ],
         ])
         ;
