@@ -16,7 +16,11 @@
                         <div class="col-md-12">
                             <div class="col d-flex content-announcement">
                                 <div class="card-phone-announcement">
-                                    {# <img class="img-announcement" src="{{ announcement.photos }}"> #}
+                                    <div class="">
+                                        {% for photo in announcement.photos %}
+                                            <img class="photo-announcement" src="{{ asset('uploads/' ~ photo.url) }}" alt="Image de l'annonce">
+                                        {% endfor %}
+                                    </div>
                                     <div class="card-announcement">
                                         <table >
                                             <tbody>

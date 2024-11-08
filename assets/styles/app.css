@@ -367,6 +367,13 @@ form .box{
 }
 
 /* announcement */
+
+.photo-announcement{
+    width: 300px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
 .no-account-announcement img, .no-account-announcement p{
     width: 60%;
     height: 60%;
@@ -433,7 +440,7 @@ form .box{
 }
 
 .btn-phone:active {
-    transform: translate(10px, 0px); /* Remplacez les valeurs par celles de votre choix */
+    transform: translate(10px, 0px);
 }
 
 .btn-announcement a{
