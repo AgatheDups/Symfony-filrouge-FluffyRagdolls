@@ -367,12 +367,21 @@ form .box{
 }
 
 /* announcement */
+.no-account-announcement img, .no-account-announcement p{
+    width: 60%;
+    height: 60%;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
 
 .card-announcement{
     border-radius: 20px;
     border: 2px solid #E9DDC5;
     background: #FFF2D7;
-    max-width: 205px;
+    width: 205px;
     margin: 0 auto;
 }
 
