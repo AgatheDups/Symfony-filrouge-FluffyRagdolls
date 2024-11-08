@@ -16,10 +16,15 @@
                         <div class="col-md-12">
                             <div class="col d-flex content-announcement">
                                 <div class="card-phone-announcement">
-                                    <div class="">
+                                    <div class="photo-announcement">
                                         {% for photo in announcement.photos %}
                                             <img class="photo-announcement" src="{{ asset('uploads/' ~ photo.url) }}" alt="Image de l'annonce">
                                         {% endfor %}
+                                        {% if announcement.catGender.id  == '2'  %}
+                                            <img class="gender-announcement" src="{{ asset('assets/img/female-sign.png') }}" alt="Chat femelle">
+                                        {% else %}
+                                            <img class="gender-announcement" src="{{ asset('assets/img/male-sign.png') }}" alt="Chat male">
+                                        {% endif %}
                                     </div>
                                     <div class="card-announcement">
                                         <table >
@@ -39,7 +44,6 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                    <br>
                                     <div class="d-flex phone-announcement">
                                         {% if announcement.user and announcement.user.phoneNumber %}
                                             <p id="phone-display-{{ loop.index }}">••••••••••</p>
@@ -52,6 +56,11 @@
                                     </div>
                                 </div>
                                 <p class="description-announcement">{{ announcement.description }}</p>
+                                {% if app.user == announcement.user %}
+                                    <form action="{{ path('announcement_delete', {'id': announcement.id}) }}" method="POST" style="display:inline;">
+                                        <button type="submit" class="btn btn-outline-danger btn-delete-announcement">❌</button>
+                                    </form>
+                                {% endif %}
                             </div>
                         </div>
                         <br>

@@ -370,8 +370,17 @@ form .box{
 
 .photo-announcement{
     width: 300px;
-    border-radius: 10px;
-    margin: 20px 0;
+    border-radius: 40px;
+    margin: 10px auto 5px auto;
+}
+
+.gender-announcement{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 100;
+    left: 20px;
+    top: 30px;
 }
 
 .no-account-announcement img, .no-account-announcement p{
@@ -388,8 +397,8 @@ form .box{
     border-radius: 20px;
     border: 2px solid #E9DDC5;
     background: #FFF2D7;
-    width: 205px;
-    margin: 0 auto;
+    width: 250px;
+    margin: 0 auto 10px auto;
 }
 
 .card-announcement tr:not(:last-child){
@@ -400,7 +409,7 @@ form .box{
 }
 
 .card-announcement td{
-    padding: 5px 15px 5px 15px;
+    padding: 5px 30px 5px 20px;
     font-size: 20px;
 }
 
@@ -451,6 +460,12 @@ form .box{
 .btn-announcement a:hover{
     text-decoration: none;
     color: rgb(255, 255, 255);
+}
+
+.btn-delete-announcement{
+    height: 35px;
+    width: 47px;
+    margin: 0 auto;
 }
 
 @media (max-width : 1200px){
