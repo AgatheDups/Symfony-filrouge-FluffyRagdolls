@@ -14,7 +14,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 class AnnouncementCrudController extends AbstractCrudController
 {
     use Trait\ReadOnlyTrait;
-    
+
     public static function getEntityFqcn(): string
     {
         return Announcement::class;
@@ -33,8 +33,11 @@ class AnnouncementCrudController extends AbstractCrudController
             AssociationField::new('cat_gender')
             ->setLabel('Cat gender')
                 ->formatValue(function ($value, $entity) {
-                    return $entity->getCatGender() ? $entity->getCatGender()->getId() : 'N/A';
-                }),
+                if ($entity->getCatGender()) {
+                    return $entity->getCatGender()->getId() === 1 ? 'Male' : 'Female';
+                }
+                return 'N/A';
+            }),
             AssociationField::new('user')
                 ->setLabel('User ID')
                 ->formatValue(function ($value, $entity) {
