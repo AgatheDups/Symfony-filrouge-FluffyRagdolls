@@ -12,6 +12,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class PhotoCrudController extends AbstractCrudController
 {
+    use Trait\ReadOnlyTrait;
+    
     public static function getEntityFqcn(): string
     {
         return Photo::class;

@@ -13,6 +13,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class AnnouncementCrudController extends AbstractCrudController
 {
+    use Trait\ReadOnlyTrait;
+    
     public static function getEntityFqcn(): string
     {
         return Announcement::class;
