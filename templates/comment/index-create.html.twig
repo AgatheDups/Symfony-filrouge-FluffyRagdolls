@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FluffyRagdolls - Commentaire{% endblock %}
+
+{% block body %}
+
+    <main>
+        <div class="col">
+            <div class="col-md-12">
+                <div class="d-flex content-create-post">
+                    <div class="card bg-light custom-shadow">
+                        <div class="card-body">
+                            {{ form_start(commentForm) }}
+                                <div class="box">
+                                    {{ form_row (commentForm.content) }}
+                                </div>  
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-danger">Créer le commentaire</button>
+                                </div>
+                            {{ form_end(commentForm) }}
+                        </div>
+                    </div>
+                </div>               
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer-sticky">
+        <p>© Agathe Dupuis 2024</p>
+    </footer>
+
+{% endblock %}
