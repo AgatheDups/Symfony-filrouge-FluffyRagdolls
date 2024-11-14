@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FluffyRagdolls - Posts{% endblock %}
+
+{% block body %}
+
+    <main>
+        <div class="col">
+            <div class="col-md-12">
+                <div class="d-flex content-create-post">
+                    <div class="card bg-light custom-shadow">
+                        <div class="card-body">
+                            {{ form_start(PostForm) }}
+                                <div class="box">
+                                    {{ form_row (PostForm.title) }}
+                                </div>  
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-danger">Créer le post</button>
+                                </div>
+                            {{ form_end(PostForm) }}
+                        </div>
+                    </div>
+                </div>               
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer-sticky">
+        <p>© Agathe Dupuis 2024</p>
+    </footer>
+
+{% endblock %}

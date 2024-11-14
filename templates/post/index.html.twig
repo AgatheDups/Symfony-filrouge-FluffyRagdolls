@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FluffyRagdolls - Posts{% endblock %}
+
+{% block body %}
+    <main>
+        <div class="col">
+            <div class="col-md-12 mx-auto">
+                <div class="d-flex flex-wrap content-card-post">
+                    {% for postData in postsWithCommentCount %}
+                        <a class="card-post" href="{{ path('app_post_show', {id: postData.post.id}) }}">
+                            <p>{{ postData.post.title }}</p>
+                            <hr>
+                            <p> {{ postData.commentCount }} Réponses</p>
+                        </a>
+                    {% endfor %}                
+                </div>
+                <button class="btn btn-danger link-post"><a class="" href="/forum/post/new">Ecrire un post</a></button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer-sticky">
+        <p>© Agathe Dupuis 2024</p>
+    </footer>
+
+{% endblock %}
