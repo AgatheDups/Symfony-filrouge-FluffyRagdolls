@@ -21,11 +21,29 @@ final class Version20241031092204 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('ALTER TABLE user ADD email VARCHAR(255) NOT NULL, ADD is_breeder TINYINT(1) NOT NULL, ADD siret VARCHAR(14) DEFAULT NULL, ADD city VARCHAR(255) NOT NULL, ADD phone_number VARCHAR(50) DEFAULT NULL');
+        $this->addSql('ALTER TABLE post ADD user_id INT DEFAULT NULL');
+        $this->addSql('ALTER TABLE post ADD CONSTRAINT FK_5A8A6C8DA76ED395 FOREIGN KEY (user_id) REFERENCES user (id)');
+        $this->addSql('CREATE INDEX IDX_5A8A6C8DA76ED395 ON post (user_id)');
+        $this->addSql('ALTER TABLE comment ADD user_id INT DEFAULT NULL, ADD post_id INT DEFAULT NULL');
+        $this->addSql('ALTER TABLE comment ADD CONSTRAINT FK_9474526CA76ED395 FOREIGN KEY (user_id) REFERENCES user (id)');
+        $this->addSql('ALTER TABLE comment ADD CONSTRAINT FK_9474526C4B89032C FOREIGN KEY (post_id) REFERENCES post (id)');
+        $this->addSql('CREATE INDEX IDX_9474526CA76ED395 ON comment (user_id)');
+        $this->addSql('CREATE INDEX IDX_9474526C4B89032C ON comment (post_id)');
+        $this->addSql('ALTER TABLE user ADD is_verified TINYINT(1) NOT NULL');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('ALTER TABLE user DROP email, DROP is_breeder, DROP siret, DROP city, DROP phone_number');
+        $this->addSql('ALTER TABLE post DROP FOREIGN KEY FK_5A8A6C8DA76ED395');
+        $this->addSql('DROP INDEX IDX_5A8A6C8DA76ED395 ON post');
+        $this->addSql('ALTER TABLE post DROP user_id');
+        $this->addSql('ALTER TABLE comment DROP FOREIGN KEY FK_9474526CA76ED395');
+        $this->addSql('ALTER TABLE comment DROP FOREIGN KEY FK_9474526C4B89032C');
+        $this->addSql('DROP INDEX IDX_9474526CA76ED395 ON comment');
+        $this->addSql('DROP INDEX IDX_9474526C4B89032C ON comment');
+        $this->addSql('ALTER TABLE comment DROP user_id, DROP post_id');
+        $this->addSql('ALTER TABLE user DROP is_verified');
     }
 }
