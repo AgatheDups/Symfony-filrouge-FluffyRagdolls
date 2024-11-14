@@ -57,8 +57,8 @@
                                 </div>
                                 <p class="description-announcement">{{ announcement.description }}</p>
                                 {% if app.user == announcement.user %}
-                                    <form action="{{ path('announcement_delete', {'id': announcement.id}) }}" method="POST" style="display:inline;">
-                                        <button type="submit" class="btn btn-outline-danger btn-delete-announcement">❌</button>
+                                    <form action="{{ path('announcement_delete', {'id': announcement.id}) }}" method="POST" style="display:inline;" id="delete-form-{{ announcement.id }}">
+                                        <button type="button" class="btn btn-outline-danger btn-delete-announcement" onclick="confirmDelete({{ announcement.id }})">❌</button>
                                     </form>
                                 {% endif %}
                             </div>
@@ -87,6 +87,14 @@
                 phoneDisplay.textContent = "••••••••••";
             }
         }
+
+        function confirmDelete(announcementId) {
+        // Demande de confirmation avant de soumettre le formulaire
+        if (confirm("Êtes-vous sûr de vouloir supprimer cette annonce ?")) {
+            // Soumettre le formulaire si l'utilisateur confirme
+            document.getElementById('delete-form-' + announcementId).submit();
+        }
+    }
     </script>
 {% endif %}
 {% endblock %}
