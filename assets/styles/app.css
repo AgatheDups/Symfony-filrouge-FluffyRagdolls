@@ -525,8 +525,7 @@ form .box{
     border-radius: 10px 10px 0 10px;
     border: #E9DDC5 2px solid;
     padding: 5px 10px;
-    margin: 10px;
-    margin: 10px 0px 10px auto;
+    margin: 20px 0px 15px auto;
 }
 
 @media (max-width : 1200px){
