@@ -5,7 +5,7 @@
 {% block body %}
     <main>
         <div class="post-focus col-md-5">
-            <h4>{{ post.title }}</h4>
+            <p>{{ post.title }}</p>
             <p class="post-focus-username">{{post.user.username}}</p>
         </div>
         <hr>
@@ -16,12 +16,17 @@
                 <p>{{ comment.content }}</p>
                 <p class="post-focus-username"><small>Posté par {{ comment.user.username }} le {{ comment.createdAt|date('Y-m-d H:i', "Europe/Paris") }}</small></p>
             </div>
+            <button class="btn btn-danger my-2"><a class="link-post" href="{{ path('app_comment_create', {'postId': post.id}) }}">Ajouter un commentaire</a></button>
         {% else %}
             <p>Aucun commentaire pour le moment.</p>
+        <button class="btn btn-danger my-2"><a class="link-post" href="{{ path('app_comment_create', {'postId': post.id}) }}">Ajouter un commentaire</a></button>
         {% endfor %}
-        <button class="btn btn-danger"><a class="link-post" href="{{ path('app_comment_create', {'postId': post.id}) }}">Ajouter un commentaire</a></button>
     </main>
-    <footer>
+    {% for comment in comments %}
+    
+    {% else %}
+    <footer class="footer-sticky">
         <p>© Agathe Dupuis 2024</p>
     </footer>
+    {% endfor %}
 {% endblock %}
