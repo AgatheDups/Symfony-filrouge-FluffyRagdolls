@@ -72,8 +72,14 @@ class PostController extends AbstractController
     #[Route('/forum/post/new', name: 'app_post_create')]
     public function create(Request $request): Response
     {
+        $user = $this->getUser();
+        if (!$user) {
+            throw $this->createAccessDeniedException('Vous devez être connecté pour ajouter un post.');
+        }
+
         $post = new Post();
         $form = $this->createForm(PostType::class, $post);
+        $post->setUser($user);
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
