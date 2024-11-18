@@ -1,0 +1,17 @@
+/* corps du site - entretien*/
+
+
+.card{
+    margin-top: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0,0.2);
+}
+.card h5{
+    color: #F34840 !important;
+    font-weight: 700;
+}
+
+.card a{
+    background: #F34840;
+    border-color: #F34840;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0,0.2);
+}

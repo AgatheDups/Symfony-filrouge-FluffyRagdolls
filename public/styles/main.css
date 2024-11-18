@@ -1,0 +1,36 @@
+#bubble{
+    display: flex;
+}
+
+.round{
+    background: #FFF2D7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2% 5vh 2% 5vh;
+    border-radius: 100px;
+    width: 90px;
+    height: 90px;
+}
+
+#catAgeForm{
+    font-size: 20px;
+    padding: 0;
+}
+
+#catAge{
+    width: 100px !important;
+    height: 30px;
+    border: solid 1px #9CBED7;
+    border-radius: 10px;
+}
+
+
+#min p, #max p{
+    text-align: center;
+}
+
+#resultAge{
+    font-family: Arial, Helvetica, sans-serif !important;
+    color:#476376;
+}

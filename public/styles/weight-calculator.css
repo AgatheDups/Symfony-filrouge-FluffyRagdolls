@@ -1,0 +1,30 @@
+#graph h2{
+    margin: auto;
+}
+
+
+#graph img{
+    width: 100%;
+}
+
+
+.box-sexe{
+    width: 15px;
+    height: 15px;
+}
+.box-male{
+    background: steelblue;
+}
+.box-female{
+    background: pink;
+}
+
+
+.female-legend, .male-legend{
+    display: flex;
+    align-items: center;
+}
+.graphic-legend p{
+    margin: 0 !important;
+    padding-left: 10px;
+}

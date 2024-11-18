@@ -2,6 +2,10 @@
 
 {% block title %}{{ post.title }}{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/post.css') }}">
+{% endblock %}
+
 {% block body %}
     <main>
         <div class="post-focus col-md-5">
@@ -16,11 +20,10 @@
                 <p>{{ comment.content }}</p>
                 <p class="post-focus-username"><small>Posté par {{ comment.user.username }} le {{ comment.createdAt|date('Y-m-d H:i', "Europe/Paris") }}</small></p>
             </div>
-            <button class="btn btn-danger my-2"><a class="link-post" href="{{ path('app_comment_create', {'postId': post.id}) }}">Ajouter un commentaire</a></button>
         {% else %}
             <p>Aucun commentaire pour le moment.</p>
-        <button class="btn btn-danger my-2"><a class="link-post" href="{{ path('app_comment_create', {'postId': post.id}) }}">Ajouter un commentaire</a></button>
         {% endfor %}
+        <button class="btn btn-danger my-2"><a class="link-post" href="{{ path('app_comment_create', {'postId': post.id}) }}">Ajouter un commentaire</a></button>
     </main>
     {% for comment in comments %}
     

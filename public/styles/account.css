@@ -1,0 +1,13 @@
+.logout-account{
+    text-decoration: none;
+    color: #6B92AE;
+    background: none !important;
+    box-shadow: none !important;
+    display: block;
+    text-align: end;
+}
+
+
+.logout-account:hover{
+    color: #486a83;
+}

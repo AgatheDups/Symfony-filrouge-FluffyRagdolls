@@ -2,6 +2,10 @@
 
 {% block title %}FluffyRagdolls{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/main.css') }}"> 
+{% endblock %}
+
 {% block body %}
     <main>
         <section class="container d-flex row">
@@ -29,7 +33,7 @@
                 <div id="esperence">
                     <h2>Espérence de vie</h2>
                     <div id="bubble">
-                        <div id="mini"><div class="round"><p>12ans</p></div><p>Minimum</p></div>
+                        <div id="min"><div class="round"><p>12ans</p></div><p>Minimum</p></div>
                         <div id="max"><div class="round"><p>17ans</p></div><p>Maximum</p></div>
                     </div>
                 </div>

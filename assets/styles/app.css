@@ -18,7 +18,7 @@ main{
     text-decoration: none;
 }
 
-h1, h2{
+h1, h2, h4{
     color: white;
 }
 
@@ -132,7 +132,7 @@ footer p{
 }
 
 
-/* corps du site - home*/
+/* corps du site - page main, care and food*/
 
                 
 #image1{
@@ -151,7 +151,7 @@ main{
     padding-left: 20px;
 }
 
-h2{
+h2, h4{
     background: #6B92AE;
     border-radius: 5px;
     width: 260px;
@@ -162,6 +162,9 @@ h2{
 @media (min-width : 650px){
     h2{
         width: 70%;
+    }
+    h4{
+        width: 40%;
     }
     main{
         margin-left: 20%;
@@ -186,121 +189,18 @@ span{
     font-weight: 700;
 }
 
-#bubble{
-    display: flex;
-}
-
-.round{
-    background: #FFF2D7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2% 5vh 2% 5vh;
-    border-radius: 100px;
-    width: 90px;
-    height: 90px;
-}
-
-#ageChatForm{
-    font-size: 20px;
-    padding: 0;
-}
-
-#ageChat{
-    width: 100px !important;
-    height: 30px;
-    border: solid 1px #9CBED7;
-    border-radius: 10px;
-}
-
-
-#mini p, #max p{
-    text-align: center;
-}
-
-#resultAge{
-    font-family: Arial, Helvetica, sans-serif !important;
-    color:#476376;
-}
-
-/* corps du site - entretien*/
-
-
-.card{
-    margin-top: 10px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0,0.2);
-}
-.card h5{
-    color: #F34840 !important;
-    font-weight: 700;
-}
-
-.card a{
-    background: #F34840;
-    border-color: #F34840;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0,0.2);
-}
-
-
-/* corps du site - entretien*/
-
-
-.card{
-    margin-top: 10px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0,0.2);
-}
-.card h5{
-    color: #F34840 !important;
-    font-weight: 700;
-}
-
-.card a{
-    background: #F34840;
-    border-color: #F34840;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0,0.2);
-}
-
-/* corps du site - calcul poids*/
-
-
-#graph h2{
-    margin: auto;
-}
-
-#graph img{
-    width: 100%;
-}
-
-.box-sexe{
-    width: 15px;
-    height: 15px;
-}
-.box-male{
-    background: steelblue;
-}
-.box-femelle{
-    background: pink;
-}
-
-.legende-femelle, .legende-male{
-    display: flex;
-    align-items: center;
-}
-.legende-graphe p{
-    margin: 0 !important;
-    padding-left: 10px;
-}
-
-/* corps du site - connexion*/
+/* form */
 
 form{
     padding: 20px 30px;
 }
 
+
 form button{
     width: 150px;
     margin: 10px 0;
 }
+
 
 form a{
     color: black;
@@ -308,228 +208,20 @@ form a{
     box-shadow: none !important;
 }
 
-form .box{
-    padding-bottom: 20px;
-}
-
-.box span{
-    width: 16px;
-    height: 16px;
-}
-
-.show, .show-verif{
-    cursor: pointer;
-}
-
-.valid,.valid-verif, .show, .show-verif{
-    width: 15px;
-    font-size: 20px;
-    color: #6B92AE !important;
-    padding: 0 10px;
-    align-self: center;
-}
-
-
-/* register */
-
 .form-control{
     margin: 0;
-}
-
-.form-control-photo{
-    display: flex;
-    flex-direction: column;
 }
 
 .form-check-input{
     margin: 5px;
 }
 
-/* account */
-
-.logout-account{
-    text-decoration: none;
-    color: #6B92AE;
-    background: none !important;
-    box-shadow: none !important;
-    display: block;
-    text-align: end;
-}
-
-.logout-account:hover{
-    color: #486a83;
+form .box{
+    padding-bottom: 20px;
 }
 
 
-/* announcement create */
-
-.form-description{
-    min-height: 120px;
-}
-
-/* announcement */
-
-.photo-announcement{
-    width: 300px;
-    border-radius: 40px;
-    margin: 10px auto 5px auto;
-}
-
-.gender-announcement{
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    z-index: 100;
-    left: 20px;
-    top: 30px;
-}
-
-.no-account-announcement img, .no-account-announcement p{
-    width: 60%;
-    height: 60%;
-    border-radius: 10px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-
-.card-announcement{
-    border-radius: 20px;
-    border: 2px solid #E9DDC5;
-    background: #FFF2D7;
-    width: 250px;
-    margin: 0 auto 10px auto;
-}
-
-.card-announcement tr:not(:last-child){
-    border-bottom: 2px solid #E9DDC5;
-}
-.card-announcement td:not(:last-child){
-    border-right: 2px solid #E9DDC5;
-}
-
-.card-announcement td{
-    padding: 5px 30px 5px 20px;
-    font-size: 20px;
-}
-
-.tag-announcement{
-    max-width: 35px;
-    max-height: 35px;
-}
-
-.phone-announcement{
-    background: #E9DDC5;
-    border-radius: 10px;
-    justify-content: space-around;
-    width: 180px;
-    height: 40px;
-    padding-top: 5px;
-    margin: 0 auto;
-}
-
-.description-announcement{
-    margin-left: 50px;
-    margin-top: 20px;
-}
-
-.tag-phone{
-    max-width: 20px;
-    max-height: 20px;
-    position: relative;
-    right: 7px;
-    bottom: 5px;
-}
-
-.btn-phone{
-    border-radius: 100%;
-    max-width: 30px;
-    max-height: 30px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.btn-phone:active {
-    transform: translate(10px, 0px);
-}
-
-.btn-announcement a{
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-}
-
-.btn-announcement a:hover{
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-}
-
-.btn-delete-announcement{
-    height: 35px;
-    width: 47px;
-    margin: 0 auto;
-}
-
-@media (max-width : 1200px){
-    .content-announcement{
-        flex-direction: column;
-    }
-}
-
-/* Post */
-
-.content-card-post{
-    justify-content: center;
-}
-
-.card-post, .card-post:hover{
-    background: #FFF2D7;
-    border-radius: 10px;
-    border: #E9DDC5 2px solid;
-    padding: 15px;
-    margin: 10px;
-    color: black;
-    text-decoration: none;
-    width: 400px;
-}
-
-@media (max-width : 1200px){
-    .card-post{
-        flex-direction: column;
-    }
-}
-
-.link-post, .link-post:hover{
-    margin: 20px 0;
-    text-decoration: none;
-    color: white;
-}
-
-.content-create-post{
-    justify-content: center;
-}
-
-.post-focus{
-    background: #FFF2D7;
-    border-radius: 10px 10px 10px 0;
-    border: #E9DDC5 2px solid;
-    padding: 15px;
-    margin: 10px;
-}
-
-.post-focus-username{
-    text-align: end;
-}
-
-.post-focus-comment{
-    background: #FFF2D7;
-    border-radius: 10px 10px 0 10px;
-    border: #E9DDC5 2px solid;
-    padding: 5px 10px;
-    margin: 20px 0px 15px auto;
-}
-
-@media (max-width : 1200px){
-    .post-focus-comment, .post-focus{
-        width: 80%;
-    }
+.box span{
+    width: 16px;
+    height: 16px;
 }
