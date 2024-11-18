@@ -2,6 +2,10 @@
     display: flex;
 }
 
+.round p{
+    margin-bottom: 0;
+}
+
 .round{
     background: #FFF2D7;
     display: flex;
