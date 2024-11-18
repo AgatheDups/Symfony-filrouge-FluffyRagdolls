@@ -11,6 +11,7 @@ use App\Repository\PostRepository;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -33,6 +34,8 @@ class PostController extends AbstractController
             $postsWithCommentCount[] = [
                 'post' => $post,
                 'commentCount' => $commentRepository->countCommentsByPost($post),
+                'user' => $post->getUser(),
+                'id =>'
             ];
         }
         $posts = $this->entityManager->getRepository(Post::class)->findAll();
@@ -94,5 +97,20 @@ class PostController extends AbstractController
         return $this->render('post/index-create.html.twig', [
             'PostForm' => $form->createView(),
         ]);
+    }
+
+    #[Route('/post/{id}/delete', name: 'post_delete', methods:"POST")]
+    public function delete(Post $post, Request $request): RedirectResponse
+    {
+        if ($post->getUser() === $this->getUser()) {
+            foreach ($post->getComments() as $comment) {
+                $this->entityManager->remove($comment);
+            }
+            $this->entityManager->remove($post);
+            $this->entityManager->flush();
+
+            $this->addFlash('success', 'Post supprimée avec succès.');
+        }
+        return $this->redirectToRoute('app_post_index');
     }
 }

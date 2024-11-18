@@ -8,9 +8,16 @@
 
 {% block body %}
     <main>
-        <div class="post-focus col-md-5">
-            <p>{{ post.title }}</p>
-            <p class="post-focus-username">{{post.user.username}}</p>
+        <div class="d-flex">
+            <div class="post-focus col-md-5">
+                <p>{{ post.title }}</p>
+                <p class="post-focus-username">{{post.user.username}}</p>
+            </div>
+            {% if app.user == post.user %}
+                <form action="{{ path('post_delete', {'id': post.id}) }}" method="POST" style="display:inline;" id="delete-form-{{post.id }}">
+                    <a type="button" class="btn btn-delete-post" onclick="confirmDeletePost({{ post.id }})">❌</a>
+                </form>
+            {% endif %}
         </div>
         <hr>
         
@@ -19,6 +26,11 @@
             <div class="post-focus-comment col-md-5">
                 <p>{{ comment.content }}</p>
                 <p class="post-focus-username"><small>Posté par {{ comment.user.username }} le {{ comment.createdAt|date('Y-m-d H:i', "Europe/Paris") }}</small></p>
+                {% if app.user == comment.user %}
+                    <form action="{{ path('comment_delete', {'id': comment.id}) }}" method="POST" style="display:inline;" id="delete-form-{{ comment.id }}">
+                        <a type="button" class="btn btn-delete-comment" onclick="confirmDeleteComment({{ comment.id }})">❌</a>
+                    </form>
+                {% endif %}
             </div>
         {% else %}
             <p>Aucun commentaire pour le moment.</p>
@@ -32,4 +44,22 @@
         <p>© Agathe Dupuis 2024</p>
     </footer>
     {% endfor %}
+
+    <script>
+        function confirmDeletePost(postId) {
+        // Demande de confirmation avant de soumettre le formulaire
+            if (confirm("Êtes-vous sûr de vouloir supprimer ce post ?")) {
+                // Soumettre le formulaire si l'utilisateur confirme
+                document.getElementById('delete-form-' + postId).submit();
+            }
+        }
+
+        function confirmDeleteComment(commentId) {
+        // Demande de confirmation avant de soumettre le formulaire
+            if (confirm("Êtes-vous sûr de vouloir supprimer ce commentaire ?")) {
+                // Soumettre le formulaire si l'utilisateur confirme
+                document.getElementById('delete-form-' + commentId).submit();
+            }
+    }
+    </script>
 {% endblock %}

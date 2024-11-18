@@ -8,6 +8,7 @@ use App\Form\CommentType;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -62,5 +63,17 @@ class CommentController extends AbstractController
             'commentForm' => $form->createView(),
             'post' => $post,
         ]);
+    }
+
+    #[Route('/comment/{id}/delete', name: 'comment_delete', methods:"POST")]
+    public function delete(Comment $comment): RedirectResponse
+    {
+        if ($comment->getUser() === $this->getUser()) {
+                        $this->entityManager->remove($comment);
+            $this->entityManager->flush();
+
+            $this->addFlash('success', 'Commentaire supprimé avec succès.');
+        }
+        return $this->redirectToRoute('app_post_index');
     }
 }
