@@ -186,11 +186,11 @@ span{
     font-weight: 700;
 }
 
-#bulle{
+#bubble{
     display: flex;
 }
 
-.rond{
+.round{
     background: #FFF2D7;
     display: flex;
     justify-content: center;
@@ -218,7 +218,7 @@ span{
     text-align: center;
 }
 
-#resultatAge{
+#resultAge{
     font-family: Arial, Helvetica, sans-serif !important;
     color:#476376;
 }

@@ -7,13 +7,13 @@
         <section class="container d-flex row">
             <div>
                 <div class=" d-flex col intro">
-                    <img class="image-chat col-lg-4" id="image1" src="../../assets/img/photo-home.jpg" alt="Chat ragdoll" srcset=""/>
+                    <img class="cat-image col-lg-4" id="image1" src="../../assets/img/photo-home.jpg" alt="Chat ragdoll" srcset=""/>
                     <div class="intro-text">
                         <h2>Origine</h2>
                         <p> Le ragdoll est une race de chat originaire des Etats-Unis. <br> <br>La race de chat Ragdoll a été créée au début des années 1960 par Ann Baker, une éleveuse de chats Persans résidant à Riverside, en Californie. Elle a obtenu cette race en croisant une chatte Persan Angora avec un chat Sacré de Birmanie, donnant ainsi naissance à un compagnon d'une douceur remarquable. Ann Baker a nommé cette nouvelle race 'Ragdoll', ce qui signifie littéralement « poupée de chiffon ».</p>
                     </div>
                 </div>
-                <div id="physique">
+                <div id="physical">
                     <h2>Caratéristique physique</h2>
                     <p><span>Son corps</span> est de construction puissante, lourde et longue, s'inscrivant dans un rectangle. Le cou est court et bien musclé, la poitrine large et arrondie, et les pattes sont de taille moyenne avec une ossature robuste.<br><br>
                     <span>Son poil</span> est mi-long et soyeux. Le poil de couverture est bien fourni et accompagné d'un sous-poil. Il est plus court sur les pattes avant et plus long et dense sur les pattes arrière. La collerette est particulièrement recherchée.<br><br>
@@ -22,22 +22,22 @@
                     <span>Ses oreilles</span> sont de taille moyenne, larges à leur attache, prolongeant la forme triangulaire de la tête et légèrement pointées vers l'avant. Leurs sommets sont arrondis. <br><br>
                     <span>Sa queue</span> est longue, large à la base et généreusement recouverte de poils.</p>
                 </div>
-                <div id="comportement">
+                <div id="attitude">
                     <h2>Caractère et comportement</h2>
                     <p>La douceur du Ragdoll est l'une de ses caractéristiques les plus marquantes. Ce chat n'affiche aucune forme d'agressivité. Sa patience exemplaire en fait un compagnon idéal pour les enfants. Très calme et discret, il recherche constamment la tranquillité et n'aime pas l'agitation. Il n'apprécie pas non plus la solitude et passe la majeure partie de son temps près de son maître. Envers ce dernier, il est très affectueux, aimant les câlins, rester sur ses genoux et même être pris dans ses bras. Le Ragdoll est avant tout un chat d'intérieur, préférant la quiétude, le confort et la sécurité de la maison au tumulte du monde extérieur.</p>
                 </div>
                 <div id="esperence">
                     <h2>Espérence de vie</h2>
-                    <div id="bulle">
-                        <div id="mini"><div class="rond"><p>12ans</p></div><p>Minimum</p></div>
-                        <div id="max"><div class="rond"><p>17ans</p></div><p>Maximum</p></div>
+                    <div id="bubble">
+                        <div id="mini"><div class="round"><p>12ans</p></div><p>Minimum</p></div>
+                        <div id="max"><div class="round"><p>17ans</p></div><p>Maximum</p></div>
                     </div>
                 </div>
-                <div id="ageHumain">
+                <div id="humanAge">
                     <h2>Calculer l'âge humain de votre chat</h2>
-                    <form id="ageChatForm" action="">
-                        <label for="ageChat">Sélectionnez l'âge de votre chat</label>
-                        <select name="ageChat" id="ageChat">
+                    <form id="catAgeForm" action="">
+                        <label for="catAge">Sélectionnez l'âge de votre chat</label>
+                        <select name="catAge" id="catAge">
                             <option value="2">2 mois</option>
                             <option value="4">4 mois</option>
                             <option value="6">6 mois</option>
@@ -64,7 +64,7 @@
                             <option value="252">21 ans</option>
                         </select>
                     </form>
-                    <p id="resultatAge"></p>
+                    <p id="resultAge"></p>
                 </div>
             </div>
         </section>
@@ -81,31 +81,31 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script>
-            document.getElementById("ageChat").addEventListener("change", convertirAge)
+            document.getElementById("catAge").addEventListener("change", convertAge)
 
-            function convertirAgeChatEnHumain(ageChat) {
-                if (ageChat === 2) {
+            function convertCatAgeHuman(catAge) {
+                if (catAge === 2) {
                     return 2; // Le deuxième mois équivaut à 2 ans humains.
-                } else if (ageChat === 4) {
-                    return 6; // Le quatrième mois équivaut à 6 ans humains.
-                } else if (ageChat === 6) {
-                    return 10; // Le sixième mois équivaut à 10 ans humains.
-                } else if (ageChat === 12) {
-                    return 15; // Le premier an équivaut à 15 ans humains.
-                } else if (ageChat === 24) {
+                } else if (catAge === 4) {
+                    return 6;
+                } else if (catAge === 6) {
+                    return 10;
+                } else if (catAge === 12) {
+                    return 15;
+                } else if (catAge === 24) {
                     return 24; // Le deuxième an équivaut à 9 ans humains de plus, soit 15 + 9.
                 } else {
-                    return 24 + ((ageChat/12) - 2) * 4; // Chaque année supplémentaire équivaut à 4 ans humains.
+                    return 24 + ((catAge/12) - 2) * 4; // Chaque année supplémentaire équivaut à 4 ans humains.
                 }
             }
 
-            function convertirAge() {
-                const ageChatSelect = document.getElementById('ageChat');
-                const ageChat = parseInt(ageChatSelect.value);
-                const ageHumain = convertirAgeChatEnHumain(ageChat);
+            function convertAge() {
+                const catAgeSelect = document.getElementById('catAge');
+                const catAge = parseInt(catAgeSelect.value);
+                const humanAge = convertCatAgeHuman(catAge);
                 
-                const resultatElement = document.getElementById('resultatAge');
-                resultatElement.textContent = `L'âge de votre Ragdoll en années humaines est ${ageHumain} ans`;
+                const resultElement = document.getElementById('resultAge');
+                resultElement.textContent = `L'âge de votre Ragdoll en années humaines est ${humanAge} ans`;
             }
         </script>
     {% endblock %}
