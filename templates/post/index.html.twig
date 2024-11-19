@@ -13,7 +13,7 @@
                 <div class="d-flex flex-wrap content-card-post">
                     {% for postData in postsWithCommentCount %}
                         <a class="card-post" href="{{ path('app_post_show', {id: postData.post.id}) }}">
-                            <p>{{ postData.post.title }}</p>
+                            <p class="post-title">{{ postData.post.title }}</p>
                             <hr>
                             <p> {{ postData.commentCount }} Réponses</p>
                         </a>

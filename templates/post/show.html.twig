@@ -24,7 +24,7 @@
 
         {% for comment in comments %}
             <div class="post-focus-comment col-md-5">
-                <p>{{ comment.content }}</p>
+                <p class="post-title">{{ comment.content }}</p>
                 <p class="post-focus-username"><small>Posté par {{ comment.user.username }} le {{ comment.createdAt|date('Y-m-d H:i', "Europe/Paris") }}</small></p>
                 {% if app.user == comment.user %}
                     <form action="{{ path('comment_delete', {'id': comment.id}) }}" method="POST" style="display:inline;" id="delete-form-{{ comment.id }}">
